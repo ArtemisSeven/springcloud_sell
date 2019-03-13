@@ -1,0 +1,15 @@
+
+eureka:
+  client:
+    service-url:
+      #服务注册中心既是server又是client，所以也需要填写服务注册中心的url
+      defaultZone: http://localhost:8761/eureka/
+    #但由于它是server，所以不让它显示在注册中心的列表上
+    register-with-eureka: false
+spring:
+  application:
+    #将此应用命名为eureka
+    name: eureka
+server:
+  #由于eureka服务注册中心默认的端口是8761，所以最好也把注册中心类的端口改成8761
+  port: 8761
