@@ -6,6 +6,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     #但由于它是server，所以不让它显示在注册中心的列表上
     register-with-eureka: false
+  server:
+    #默认开启自我保护机制，也就是当不知道某个client是否在线时默认为在线，8761页面上会显示警告EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.
+    #一般只在开发环境下关闭此机制，生产环境不要关闭
+    enable-self-preservation: false
 spring:
   application:
     #将此应用命名为eureka
