@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+    defaultZone: http://localhost:8761/eureka/
+  instance:
+    #配置了这个属性，在注册中心那里点击跳转到此client页面时显示的是client1而非ip地址
+    hostname: client1
+spring:
+  application:
+    name: client1
+server:
+  port: 8881
